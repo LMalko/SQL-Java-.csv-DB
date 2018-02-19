@@ -3,15 +3,15 @@ package Java.Model;
 
 public class Book{
 
-    private int isbn;
+    private String isbn;
     private String author;
     private String title;
     private String publisher;
     private int publication_year;
-    private int price;
+    private String price;
     private int type;
 
-    public Book(int isbn, String author, String title, String publisher, int publication_year, int price, int type){
+    public Book(String isbn, String author, String title, String publisher, int publication_year, String price, int type){
         this.isbn = isbn;
         this.author = author;
         this.title = title;
@@ -21,7 +21,7 @@ public class Book{
         this.type = type;
     }
 
-    public int getISBN(){
+    public String getISBN(){
         return this.isbn;
     }
 
@@ -41,7 +41,7 @@ public class Book{
         return this.publication_year;
     }
 
-    public int price(){
+    public String price(){
         return this.price;
     }
 
@@ -51,7 +51,7 @@ public class Book{
 
     @Override
     public String toString(){
-        return String.format("ISBN: %d, AUTHOR: %s, TITLE: %s, PUBLISHER: %s, PUBLICATION_YEAR: %d, PRICE: %d, TYPE: %d",
+        return String.format("ISBN: %s, AUTHOR: %s, TITLE: %s, PUBLISHER: %s, PUBLICATION_YEAR: %d, PRICE: %s, TYPE: %d",
         this.isbn, this.author, this.title, this.publisher, this.publication_year, this.price, this.type);
     }
 }

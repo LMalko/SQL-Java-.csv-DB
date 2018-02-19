@@ -8,7 +8,7 @@ import Java.DBProcessor.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookDAO{
+public class BookDAO implements BookInterface{
 
     private static ItemCollection<Book> booksCollection = new ItemCollection<Book>("Books");
     private DBStatementProcessor databaseProcessor = new DBStatementProcessor("jdbc:sqlite:database/database.db");
@@ -27,12 +27,12 @@ public class BookDAO{
         ArrayList<ArrayList<String>> books = databaseProcessor.getArrayListFromQuery("SELECT * FROM books");
 
         for(int i=0; i < books.size(); i++) {
-            int isbn = Integer.parseInt(books.get(i).get(bookISBN));
+            String isbn = books.get(i).get(bookISBN);
             String author = books.get(i).get(bookAuthor);
             String title = books.get(i).get(bookTitle);
             String publisher = books.get(i).get(bookPublisher);
             int publication_year = Integer.parseInt(books.get(i).get(bookPublicationYear));
-            int price = Integer.parseInt(books.get(i).get(bookPrice));
+            String price = books.get(i).get(bookPrice);
             int type = Integer.parseInt(books.get(i).get(bookType));
             
 
@@ -42,6 +42,7 @@ public class BookDAO{
     }
 
     public ItemCollection<Book> getBooks(){
+        importBooks();
         return booksCollection;
     }
 
