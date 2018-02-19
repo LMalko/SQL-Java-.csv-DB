@@ -1,11 +1,11 @@
 package Java;
 
-import App.Application;
+import Java.Controller.JerzyController;
 
 public class Main {
 
     public static void main(String[] args) {
-        Application start = new Application();
+        JerzyController start = new JerzyController();
         start.startApp();
     }
 }
