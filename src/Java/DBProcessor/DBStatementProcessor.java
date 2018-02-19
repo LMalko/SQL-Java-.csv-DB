@@ -1,4 +1,4 @@
-package DBProcessor;
+package Java.DBProcessor;
 
 import java.util.List;
 import java.util.ArrayList;
