@@ -1,6 +1,6 @@
 package Java;
 
-import Java.Controller.JerzyController;
+import Java.Controller.*;
 
 public class Main {
 

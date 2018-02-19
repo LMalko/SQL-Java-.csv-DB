@@ -1,2 +1,2 @@
 #!/bin/bash
-java -classpath bin/ Main
+java -classpath bin/ Java.Main

@@ -1,0 +1,26 @@
+
+
+
+
+
+
+***********************************************************************
+* 		Jerzy Menu            	     (｡◕‿◕｡)                    
+*                                                                     *
+***********************************************************************
+*   1.  Add book to collection                                        *
+*   2.  Edit book                                                     *
+*   3.  Delete book from collection                                   *
+*   4.  Search book by parameter                                      *
+*   5.  Display books sorted by name                                  *
+*   6.  Display books by chosen author                                *
+*                                                                     *
+*   Ekstra:			                                      *
+*   7.  Display amount of books by author	                      *			
+*   8.  Display books from the last 10 years			      *
+*   9.  Display most expensive book			              *
+*   10. Display authors full name and age			      *
+*                                                                     *
+*                                                                     *
+*   0. Exit.                                                          *
+***********************************************************************
