@@ -20,6 +20,7 @@
 *   8.  Display books from the last 10 years			      *
 *   9.  Display most expensive book			              *
 *   10. Display authors full name and age			      *
+*   11. Display all books.					      *
 *                                                                     *
 *                                                                     *
 *   0. Exit.                                                          *
