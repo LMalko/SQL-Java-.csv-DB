@@ -129,24 +129,43 @@ public class DBStatementProcessor{
         return receivedData;
     }
 
-    public List<List> getListFromQuery(String query){
-        List<List> arrayResult = new ArrayList<>();
+    public ArrayList getArrayListFromQuery(String query){
+        
+        ArrayList<ArrayList> arrayResult = new ArrayList<ArrayList>();
 
         try{
-            ResultSet result = executeQueryAgainstDatabase(query);
-            List<String> columnNames = getColumnNamesFromQueryResult(result);
+            
+            statement = connection.createStatement();
+            ResultSet result = statement.executeQuery(query);
+
+            // Group all column names from query result
+            ResultSetMetaData metaData = result.getMetaData(); 
+            int columnCount = metaData.getColumnCount(); 
+            List<String> columnNames = new ArrayList<String>();
+
+
+            for (int row = 1; row <= columnCount; row++){  
+                String columnName = metaData.getColumnName(row).toString();  
+                columnNames.add(columnName);
+            }
 
             while(result.next()){
-                List<String> rowResult = new LinkedList<>();
-                for (int i = 0; i < columnNames.size(); i++){        
+                
+                ArrayList<String> rowResult = new ArrayList<String>();
+            
+                for (int i = 0; i < columnNames.size(); i++){
+                        
                         rowResult.add(result.getString(columnNames.get(i)));
                     }
                 arrayResult.add(rowResult);
                 }
-        }catch(Exception exception){
-            System.err.println(exception.getClass().getName() + ": " + exception.getMessage());
-            System.out.println("\n\n\nList was not received.");
-        }
+                
+            }catch(Exception exception){
+    
+                System.err.println(exception.getClass().getName() + ": " + exception.getMessage() );
+                System.out.println("\n\n\nOperation was NOT performed successfully");
+    
+            }
         return arrayResult;
     }
 
